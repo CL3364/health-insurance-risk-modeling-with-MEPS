@@ -1,0 +1,9 @@
+# MEPS raw data
+data/raw/*.dta
+*.dta
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python
+__pycache__/
