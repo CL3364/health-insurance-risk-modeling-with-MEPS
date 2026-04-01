@@ -1,0 +1,88 @@
+[
+  {
+    "model": "Linear Regression",
+    "r2": 0.4049,
+    "rmse_log": 2.4783,
+    "mae_log": 1.8677,
+    "rmse_dollar": 20136.07,
+    "mae_dollar": 6980.33
+  },
+  {
+    "model": "SVR",
+    "r2": 0.3794,
+    "rmse_log": 2.5308,
+    "mae_log": 1.8127,
+    "rmse_dollar": 19053.16,
+    "mae_dollar": 6756.39
+  },
+  {
+    "model": "Random Forest",
+    "r2": 0.4191,
+    "rmse_log": 2.4485,
+    "mae_log": 1.811,
+    "rmse_dollar": 18763.17,
+    "mae_dollar": 6286.25
+  },
+  {
+    "model": "XGBoost",
+    "r2": 0.4398,
+    "rmse_log": 2.4044,
+    "mae_log": 1.7702,
+    "rmse_dollar": 18459.65,
+    "mae_dollar": 6220.39
+  },
+  {
+    "model": "Hurdle (LGB log1p space)",
+    "r2": 0.2804,
+    "rmse_log": 2.7251,
+    "mae_log": 1.7515,
+    "rmse_dollar": 18484.86,
+    "mae_dollar": 6209.63,
+    "pred_mean": 3166.53
+  },
+  {
+    "model": "CatBoost (85 feat)",
+    "r2": 0.446,
+    "rmse_log": 2.3911,
+    "mae_log": 1.7547,
+    "rmse_dollar": 18452.59,
+    "mae_dollar": 6163.49,
+    "pred_mean": 2920.92
+  },
+  {
+    "model": "LGB Optuna (85 feat)",
+    "r2": 0.4443,
+    "rmse_log": 2.3949,
+    "mae_log": 1.7587,
+    "rmse_dollar": 18528.69,
+    "mae_dollar": 6163.25,
+    "pred_mean": 2745.49
+  },
+  {
+    "model": "XGB Optuna (85 feat)",
+    "r2": 0.4452,
+    "rmse_log": 2.3929,
+    "mae_log": 1.7592,
+    "rmse_dollar": 18384.91,
+    "mae_dollar": 6139.52,
+    "pred_mean": 2968.34
+  },
+  {
+    "model": "Ensemble (Optuna LGB+XGB+CatBoost)",
+    "r2": 0.4443,
+    "rmse_log": 2.3949,
+    "mae_log": 1.7587,
+    "rmse_dollar": 18528.69,
+    "mae_dollar": 6163.25,
+    "pred_mean": 2745.49
+  },
+  {
+    "model": "Stacking (4 models + Ridge meta)",
+    "r2": 0.4497,
+    "rmse_log": 2.3831,
+    "mae_log": 1.7509,
+    "rmse_dollar": 18430.8,
+    "mae_dollar": 6130.13,
+    "pred_mean": 2864.89
+  }
+]

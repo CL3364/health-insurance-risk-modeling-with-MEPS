@@ -8,3 +8,13 @@ data/raw/*.dta
 # Python
 __pycache__/
 .DS_Store
+
+# Large model files
+models/random_forest.pkl
+
+# Large intermediate CSVs
+notebooks/X_train_scaled.csv
+notebooks/X_test_scaled.csv
+
+# CatBoost training artifacts
+notebooks/catboost_info/

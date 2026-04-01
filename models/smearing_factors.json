@@ -1,0 +1,10 @@
+{
+  "smearing_factors": {
+    "Linear Regression": 11.238666926782473,
+    "SVR": 10.692123649007412,
+    "Random Forest": 3.665413242428035,
+    "XGBoost": 5.0066699111833195
+  },
+  "hurdle_smearing": 1.8025308264917257,
+  "note": "Multiply expm1(log_pred) by smearing_factor to correct log-space underestimation bias (Duan 1983)."
+}

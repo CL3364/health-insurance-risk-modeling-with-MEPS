@@ -1,0 +1,98 @@
+{
+  "imputation_defaults": {
+    "age_median": 44,
+    "bmi_overall_median": 26.5,
+    "bmi_child_median": 20.3,
+    "bmi_adult_median": 27.4,
+    "self_health_median": 2,
+    "self_mhealth_median": 2,
+    "family_size_mode": 2,
+    "k6_adult_median": 2.0,
+    "phq2_adult_median": 0.0,
+    "education_mode": 12
+  },
+  "income_transform": {
+    "note": "Apply signed_log1p to family_income and total_person_income BEFORE scaler.transform()",
+    "formula": "np.sign(x) * np.log1p(np.abs(x))",
+    "applies_to": [
+      "family_income",
+      "total_person_income"
+    ]
+  },
+  "age_gates": {
+    "bmi_child_range": [
+      6,
+      17
+    ],
+    "bmi_adult_min": 18,
+    "is_student_range": [
+      17,
+      23
+    ],
+    "mental_health_min": 18,
+    "adult_dx_min": 18,
+    "adhd_range": [
+      5,
+      17
+    ],
+    "employment_min": 16,
+    "education_min": 5
+  },
+  "feature_cols": [
+    "age",
+    "sex",
+    "hispanic",
+    "bmi",
+    "education_years",
+    "family_size",
+    "poverty_category",
+    "family_income",
+    "total_person_income",
+    "employment_status",
+    "is_student",
+    "self_rated_health",
+    "self_rated_mental_health",
+    "needs_help_iadl",
+    "needs_help_adl",
+    "any_limitation",
+    "k6_distress_score",
+    "phq2_depression_score",
+    "dx_hypertension",
+    "dx_coronary_heart_disease",
+    "dx_angina",
+    "dx_myocardial_infarction",
+    "dx_stroke",
+    "dx_emphysema",
+    "dx_high_cholesterol",
+    "dx_cancer",
+    "dx_arthritis",
+    "dx_asthma",
+    "dx_adhd_add",
+    "dx_diabetes",
+    "has_private_insurance",
+    "has_tricare",
+    "has_medicare",
+    "has_medicaid",
+    "has_va_coverage",
+    "is_uninsured",
+    "has_usual_care",
+    "race_white",
+    "race_other_asian_pi",
+    "race_multiple",
+    "race_black",
+    "race_native_american",
+    "race_asian_indian",
+    "race_chinese",
+    "race_filipino",
+    "marital_divorced",
+    "marital_married",
+    "marital_never_married",
+    "marital_separated",
+    "marital_under_16",
+    "marital_widowed",
+    "region_midwest",
+    "region_northeast",
+    "region_south",
+    "region_west"
+  ]
+}
