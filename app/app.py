@@ -14,14 +14,14 @@ st.set_page_config(
 )
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-BASE_DIR   = os.path.dirname(os.path.abspath(__file__))
-MODELS_DIR = os.path.join(BASE_DIR, '..', 'models')
-NB_DIR     = os.path.join(BASE_DIR, '..', 'notebooks')
+BASE_DIR      = os.path.dirname(os.path.abspath(__file__))
+MODELS_DIR    = os.path.join(BASE_DIR, '..', 'models')
+ARTIFACTS_DIR = os.path.join(BASE_DIR, '..', 'artifacts')
 
 # ── Loaders ───────────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_assets():
-    scaler = joblib.load(os.path.join(NB_DIR, 'scaler.pkl'))
+    scaler = joblib.load(os.path.join(ARTIFACTS_DIR, 'scaler.pkl'))
 
     # Legacy log-space models (55 features, scaled)
     log_models = {}
