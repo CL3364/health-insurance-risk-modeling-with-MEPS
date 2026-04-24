@@ -26,10 +26,10 @@ def load_assets():
     # Legacy log-space models (55 features, scaled)
     log_models = {}
     for name, fname in [
-        ('Linear Regression', 'linear_regression.pkl'),
-        ('SVR',               'svr.pkl'),
+        ('Linear Regression', 'baseline/linear_regression.pkl'),
+        ('SVR',               'baseline/svr.pkl'),
         ('Random Forest',     'random_forest.pkl'),
-        ('XGBoost',           'xgboost.pkl'),
+        ('XGBoost',           'baseline/xgboost.pkl'),
     ]:
         p = os.path.join(MODELS_DIR, fname)
         if os.path.exists(p):
@@ -38,19 +38,19 @@ def load_assets():
     # Improved models — trained on 63-feature extended set
     improved = {}
     for key, fname in [
-        ('tweedie',    'xgboost_tweedie.pkl'),
-        ('hurdle_clf', 'hurdle_classifier.pkl'),
-        ('hurdle_reg', 'hurdle_regressor.pkl'),
-        ('lgb',        'lightgbm.pkl'),
-        ('xgb_v2',     'xgboost_v2.pkl'),
+        ('tweedie',    'hurdle/xgboost_tweedie.pkl'),
+        ('hurdle_clf', 'hurdle/hurdle_classifier.pkl'),
+        ('hurdle_reg', 'hurdle/hurdle_regressor.pkl'),
+        ('lgb',        'primary/lightgbm.pkl'),
+        ('xgb_v2',     'primary/xgboost_v2.pkl'),
     ]:
         p = os.path.join(MODELS_DIR, fname)
         if os.path.exists(p):
             improved[key] = joblib.load(p)
 
-    with open(os.path.join(MODELS_DIR, 'model_meta.json'))        as f: meta          = json.load(f)
-    with open(os.path.join(MODELS_DIR, 'smearing_factors.json'))  as f: smearing_data  = json.load(f)
-    with open(os.path.join(MODELS_DIR, 'percentile_lookup.json')) as f: pct_data       = json.load(f)
+    with open(os.path.join(MODELS_DIR, 'meta/model_meta.json'))        as f: meta          = json.load(f)
+    with open(os.path.join(MODELS_DIR, 'meta/smearing_factors.json'))  as f: smearing_data  = json.load(f)
+    with open(os.path.join(MODELS_DIR, 'meta/percentile_lookup.json')) as f: pct_data       = json.load(f)
 
     return scaler, log_models, improved, meta, smearing_data, pct_data
 
@@ -472,7 +472,7 @@ st.info(
 
 # ── Model performance ─────────────────────────────────────────────────────────
 with st.expander("Model Performance on Test Set (4,487 people)", expanded=False):
-    results_path = os.path.join(MODELS_DIR, 'model_results.json')
+    results_path = os.path.join(MODELS_DIR, 'meta/model_results.json')
     if os.path.exists(results_path):
         res_df = pd.read_json(results_path)
         if not res_df.empty:
